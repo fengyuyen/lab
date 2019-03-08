@@ -5,78 +5,126 @@
     <title>骨科手術前表單</title>
 </head>
 <body>
-    <h1>Orthopaedic Pre-op Order Form</h1>
-    <form  action="Default.aspx" method="post">
-        Patient name:<br>
-        <input type="text" name="patient name">
-        <br>
-        Date of Birth:(example:1999/01/01)<br>
-        <input type="date" name=" date of birth">
-        <br>
-        H & P:<br>
-        <input type="checkbox" name="H & P[]" value="per PCP">per PCP
-        <input type="checkbox" name="H & P[]" value="per PCP,may use hospitalists if not available">per PCP,may use hospitalists if not available
-        <input type="checkbox" name="H & P[]" value="per hospitalists">per hospitalists
-        <input type="checkbox" name="H & P[]" value="per surgeon_date">per surgeon_date<br>
-        Anesthesia:<br>
-        <input type="radio" name="Anesthesia" value="Anesthesia1">General Anesthesia
-        <input type="radio" name="Anesthesia" value="Anesthesia2">MAC Anesthesia
-        <input type="radio" name="Anesthesia" value="Anesthesia3">Local Anesthesia<br>
-        PAT/SDS RN to check if criteria met:<br>
-        <input type="checkbox" name=" PAT/SDS RN []" value="12 lead EKG-within 30 days of surgery">12 lead EKG-within 30 days of surgery
-        <input type="checkbox" name=" PAT/SDS RN []" value="Renal(BMP)-within 30 days of surgery">Renal(BMP)-within 30 days of surgery
-        <input type="checkbox" name=" PAT/SDS RN []" value="PT/INR">PT/INR<br>
-        <input type="checkbox" name=" PAT/SDS RN []" value="Potassium on Admission">Potassium on Admission
-        <input type="checkbox" name=" PAT/SDS RN []" value="Glucose on Admission">Glucose on Admission
-        <input type="checkbox" name=" PAT/SDS RN []" value="PT on admission">PT on admission<br>
-        Labs:<br>
-        <input type="checkbox" name="Labs[]" value="CBC">CBC
-        <input type="checkbox" name="Labs[]" value="PT/INR">PT/INR
-        <input type="checkbox" name="Labs[]" value="PTT">PTT
-        <input type="checkbox" name="Labs[]" value="Fibrinogen">Fibrinogen
-        <input type="checkbox" name="Labs[]" value="Renal(BMP)">Renal(BMP)
-        <input type="checkbox" name="Labs[]" value="LIVP">LIVP
-        <input type="checkbox" name="Labs[]" value="Urinalysis">Urinalysis
-        <input type="checkbox" name="Labs[]" value="Urine C&S">Urine C&S
-        <input type="checkbox" name="Labs[]" value="CBC">CBC<br>
-        Culture:<br>
-        <input type="radio" name="Culture" value="Culture1">Nasal Culture
-        <input type="radio" name="Culture" value="Culture2">Groin Culture<br>
-        X-ray:<br>
-        <input type="checkbox" name="X-ray[]" value="Chest PA&Lateral (within 6 months)">CBC<br>
-        <input type="checkbox" name="X-ray[]" value="Other">Other<br>
-        <textarea name="Other what" cols="45" rows="4"></textarea><br>
-        Reason:<br>
-        <textarea name=" Reason" cols="45" rows="4"></textarea><br>
-        <br>
-        <input type="checkbox" name="celebrex">Celebrex does not need to be stopped prior to surgery.All others NSAIDs should be stopped 5 days before<br>
-    </form>
-    <h1>Orthopaedic Same Day Surgery Orders</h1>
-    <form>
-        STATUS:<br>
-        <input type="radio" name="STATUS" value="STATUS1">Admit to IP
-        <input type="radio" name="STATUS" value="STATUS2">Ambulatory/outpatient<br>
-        ALLERGLES:<br>
-        <input type="radio" name="ALLERGLES" value="ALLERGLES1">IV
-        <input type="radio" name="ALLERGLES" value="ALLERGLES2">Insert Saline Lock<br>
-        Antibiotics on call to OR:<br>
-        <input type="radio" name="Antibiotics" value="Antibiotics1">Cefazolin 1 Gram IVPB
-        <input type="radio" name="Antibiotics" value="Antibiotics2">Cefazolin 2 grams IVPB<br>
-        If allergic,give<br>
-        <input type="radio" name="allergic" value="allergic1">Clindamycin 600 mg IVPB
-        <input type="radio" name="allergic" value="allergic2">Clindamycin 900 mg IVPB
-        <input type="radio" name="allergic" value="allergic3">Clindamycin 1 gram IVPB<br>
-        <br>
-        <input type="checkbox" name="Anti-embolism">Anti-embolism:
-        TED hose:
-        <input type="radio" name="TED " value="TED 1">Knee high
-        <input type="radio" name="TED " value="TED 2">Thigh high
-        SCD:
-        <input type="radio" name="SCD " value="SCD 1">Knee high
-        <input type="radio" name="SCD " value="SCD 2">Thigh high<br>
-        <input type="submit" value="提交">
-        <input type="reset" value="重新輸入">
-    </form>
+     <h1>Orthopaedic Pre-op Order Form</h1>
+     <form id="orderForm1" action="http://203.64.84.113/x/RQ_RS.aspx" method="post" name="form1">
+         <table border="1">
+             <tr>
+                 <td>
+                     Patient name:
+                     <input type="text" name="patient name">
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     Date of Birth:(example:1999/01/01)
+
+                     <input type="date" name=" date of birth">
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     H & P:
+
+                     <input type="checkbox" name="H & P[]" value="per PCP">per PCP
+                     <input type="checkbox" name="H & P[]" value="per PCP,may use hospitalists if not available">per PCP,may use hospitalists if not available
+                     <input type="checkbox" name="H & P[]" value="per hospitalists">per hospitalists
+                     <input type="checkbox" name="H & P[]" value="per surgeon_date">per surgeon_date
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     Anesthesia:
+
+                     <input type="radio" name="Anesthesia" value="Anesthesia1">General Anesthesia
+                     <input type="radio" name="Anesthesia" value="Anesthesia2">MAC Anesthesia
+                     <input type="radio" name="Anesthesia" value="Anesthesia3">Local Anesthesia
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     PAT/SDS RN to check if criteria met:
+
+                     <input type="checkbox" name=" PAT/SDS RN []" value="12 lead EKG-within 30 days of surgery">12 lead EKG-within 30 days of surgery
+                     <input type="checkbox" name=" PAT/SDS RN []" value="Renal(BMP)-within 30 days of surgery">Renal(BMP)-within 30 days of surgery
+                     <input type="checkbox" name=" PAT/SDS RN []" value="PT/INR">PT/INR
+
+                     <input type="checkbox" name=" PAT/SDS RN []" value="Potassium on Admission">Potassium on Admission
+                     <input type="checkbox" name=" PAT/SDS RN []" value="Glucose on Admission">Glucose on Admission
+                     <input type="checkbox" name=" PAT/SDS RN []" value="PT on admission">PT on admission
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     Labs:
+
+                     <input type="checkbox" name="Labs[]" value="CBC">CBC
+                     <input type="checkbox" name="Labs[]" value="PT/INR">PT/INR
+                     <input type="checkbox" name="Labs[]" value="PTT">PTT
+                     <input type="checkbox" name="Labs[]" value="Fibrinogen">Fibrinogen
+                     <input type="checkbox" name="Labs[]" value="Renal(BMP)">Renal(BMP)
+                     <input type="checkbox" name="Labs[]" value="LIVP">LIVP
+                     <input type="checkbox" name="Labs[]" value="Urinalysis">Urinalysis
+                     <input type="checkbox" name="Labs[]" value="Urine C&S">Urine C&S
+                     <input type="checkbox" name="Labs[]" value="CBC">CBC
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     Culture:
+
+                     <input type="radio" name="Culture" value="Culture1">Nasal Culture
+                     <input type="radio" name="Culture" value="Culture2">Groin Culture
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     X-ray:
+
+                     <input type="checkbox" name="X-ray[]" value="Chest PA&Lateral (within 6 months)">CBC
+
+                     <input type="checkbox" name="X-ray[]" value="Other">Other
+
+                     <textarea name="Other what" cols="45" rows="4"></textarea>
+                     Reason:
+
+                     <textarea name=" Reason" cols="45" rows="4"></textarea>
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     <input type="checkbox" name="celebrex">Celebrex does not need to be stopped prior to surgery.All others NSAIDs should be stopped 5 days before
+                 </td>
+             </tr>
+         </table>
+
+     </form>
+         <h1>Orthopaedic Same Day Surgery Orders</h1>
+         <form>
+             STATUS:
+             <input type="radio" name="STATUS" value="STATUS1">Admit to IP
+             <input type="radio" name="STATUS" value="STATUS2">Ambulatory/outpatient
+             ALLERGLES:
+             <input type="radio" name="ALLERGLES" value="ALLERGLES1">IV
+             <input type="radio" name="ALLERGLES" value="ALLERGLES2">Insert Saline Lock
+             Antibiotics on call to OR:
+             <input type="radio" name="Antibiotics" value="Antibiotics1">Cefazolin 1 Gram IVPB
+             <input type="radio" name="Antibiotics" value="Antibiotics2">Cefazolin 2 grams IVPB
+             If allergic,give
+             <input type="radio" name="allergic" value="allergic1">Clindamycin 600 mg IVPB
+             <input type="radio" name="allergic" value="allergic2">Clindamycin 900 mg IVPB
+             <input type="radio" name="allergic" value="allergic3">Clindamycin 1 gram IVPB
+             
+             <input type="checkbox" name="Anti-embolism">Anti-embolism:
+             TED hose:
+             <input type="radio" name="TED " value="TED 1">Knee high
+             <input type="radio" name="TED " value="TED 2">Thigh high
+             SCD:
+             <input type="radio" name="SCD " value="SCD 1">Knee high
+             <input type="radio" name="SCD " value="SCD 2">Thigh high
+             <input type="submit" value="提交">
+             <input type="reset" value="重新輸入">
+         </form>
+    
 </body>
 
 </html>
