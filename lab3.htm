@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-
+    
 </head>
 <body>
     <form name="myForm" action="http://203.64.84.113/x/RQ_RS.aspx" method="post">
@@ -11,51 +11,42 @@
         電話: <input type="text" name="電話" value="" id="t">
         生日: <input type="date" name="生日" value="" id="b">
         性別:
-        <input type="radio" name="gender" value="male" id="m" onclick="getPatient();"/> Male
-        <input type="radio" name="gender" value="female"id="f" onclick="getPatient();"/> Female
+        <input type="radio" name="性別" value="male" id="m" /> Male
+        <input type="radio" name="性別" value="female" id="f" /> Female
         <br>
-        <button onclick="Function1()">Click me</button>
-        <button onclick="loadPatient()">Click me 2</button>
-        <button onclick="getPatient()">Click me 3</button>
+        防呆
+        <input type="button" onclick="Function1()" value="Click me"> <br>
+        loadPatient
+        <input type="button" onclick="loadPatient()" value="Click me 2"> <br>
+        getPatient
+        <input type="button" onclick="getPatient()" value="Click me 3"> <br>
     </form>
-    <script language="javascript">
-        function Function1()
-        {
+    <script >
+        function Function1() {
             if (myForm.姓名.value == "") {
                 alert("未輸入姓名");
             }
             else if (myForm.電話.value == "") {
                 alert("未輸入電話");
             }
-            else if (myForm.電話.value < '0' || myForm.電話.value>'9')
-            {
+            else if (myForm.電話.value < '0' || myForm.電話.value > '9') {
                 alert("輸入需為數字");
             }
         }
-        function loadPatient()
-        {
+        function loadPatient() {
             var patient = { "name": "Chalmers", "telecom": 12345678, "birthDate": "1974-12-25", "gender": "male" };
             document.myForm.姓名.value = patient.name;
             document.myForm.電話.value = patient.telecom;
             document.myForm.生日.value = patient.birthDate;
             document.myForm.性別.value = patient.gender;
         }
-        function getPatient()
-        {
+        function getPatient() {
             var oform = document.forms['myForm'];
             var 姓名 = oform.elements.姓名.value;
             var 電話 = oform.elements.電話.value;
             var 生日 = oform.elements.生日.value;
-            var type = document.getElementById("性別");
-            if (document.getElementById("m").checked) 
-            {
-                var val = document.getElementById("m").value;
-            }
-            else if (document.getElementById("f").checked)
-            {
-                var val = document.getElementById("f").value;
-            }
-            alert('姓名是' + 姓名 + '\n電話是' + 電話+'\n生日是'+生日+'\n性別是'+val);
+            var 性別 = oform.elements.性別.value;
+            alert('姓名是' + 姓名 + '\n電話是' + 電話 + '\n生日是' + 生日 + '\n性別是' + 性別);
         }
     </script>
 </body>
