@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>骨科手術前表單</title>
+</head>
+<body>
+    <h1>Orthopaedic Pre-op Order Form</h1>
+
+    <form id="orderForm1" action="http://203.64.84.113/x/RQ_RS.aspx" method="post" name="form1">
+        <table border="1" bordercolor="black">
+            <tr bgcolor="lightcyan">
+                <td>
+                    <font size="4" color="royalblue">
+                        Patient name: <input type="text" name="Patientname" value="" id="h">
+                    </font>
+                </td>
+            </tr>
+            <tr bgcolor="lightcyan">
+                <td>
+                    <font size="4" color="royalblue">
+                        Date of Birth:(example:1999/01/01)
+                    </font>
+
+                    <input type="date" name=" DateofBirth">
+                </td>
+            </tr>
+            <tr bgcolor="lightcyan">
+                <td>
+                    <font size="4" color="royalblue">
+                        Height: <input type="text" name="Height" value="" id="h">
+                    </font>
+                </td>
+            </tr>
+            <tr bgcolor="lightcyan">
+                <td>
+                    <font size="4" color="royalblue">
+                        Weight: <input type="text" name="Weight" value="" id="w">
+                    </font>
+                </td>
+            </tr>
+            <tr bgcolor="lightcyan">
+                <td>
+                    <font size="4" color="royalblue" id="hp">
+                        H & P:
+                    </font>
+                    <script>
+                        var HP = ["per PCP", "per PCP,may use hospitalists if not available", "per hospitalists", "per surgeon_date"];
+                        <option value="hp">document.getElementById("hp").innerHTML = HP</option>
+                    </script>
+
+                    <br><br>
+                </td>
+            </tr>
+            <tr bgcolor="lightcyan">
+                <td>
+                    <font size="4" color="royalblue">
+                        Anesthesia:
+                    </font>
+                    <input type="radio" name="Anesthesia" value="General Anesthesia">General Anesthesia
+                    <input type="radio" name="Anesthesia" value="MAC Anesthesia">MAC Anesthesia
+                    <input type="radio" name="Anesthesia" value="Local Anesthesia">Local Anesthesia
+                </td>
+            </tr>
+            <tr bgcolor="lightcyan">
+                <td>
+                    <font size="4" color="royalblue">
+                        PAT/SDS RN to check if criteria met:
+                    </font>
+
+                    <input type="radio" value="12 lead EKG-within 30 days of surgery">12 lead EKG-within 30 days of surgery
+                    <input type="radio" value="Renal(BMP)-within 30 days of surgery">Renal(BMP)-within 30 days of surgery
+                    <input type="radio" value="PT/INR">PT/INR
+                    <input type="radio" value="Potassium on Admission">Potassium on Admission
+                    <p>
+                        <input type="radio" value="Glucose on Admission">Glucose on Admission
+                        <input type="radio" value="PT on admission">PT on admission
+                    </p>
+                </td>
+            </tr>
+            <tr bgcolor="lightcyan">
+                <td>
+                    <font size="4" color="royalblue">
+                        Labs:
+                    </font>
+
+                    <input type="radio" name="Labs" value="CBC">CBC
+                    <input type="radio" name="Labs" value="PT/INR">PT/INR
+                    <input type="radio" name="Labs" value="PTT">PTT
+                    <input type="radio" name="Labs" value="Fibrinogen">Fibrinogen
+                    <input type="radio" name="Labs" value="Renal(BMP)">Renal(BMP)
+                    <input type="radio" name="Labs" value="LIVP">LIVP
+                    <input type="radio" name="Labs" value="Urinalysis">Urinalysis
+                    <input type="radio" name="Labs" value="Urine C&S">Urine C&S
+                    <input type="radio" name="Labs" value="CBC">CBC
+                </td>
+            </tr>
+            <tr bgcolor="lightcyan">
+                <td>
+                    <font size="4" color="royalblue">
+                        Culture:
+                    </font>
+
+                    <input type="radio" name="Culture" value="Culture">Nasal Culture
+                    <input type="radio" name="Culture" value="Culture">Groin Culture
+                </td>
+            </tr>
+            <tr bgcolor="lightcyan">
+                <td>
+                    <font size="4" color="royalblue">
+                        X-ray:
+                    </font>
+                    <input type="radio" name="Xray" value="Chest PA&Lateral (within 6 months)">CBC
+
+                    <input type="radio" name="Xray" value="Other">Other
+
+                    <textarea name="Other" cols="45" rows="4"></textarea>
+                    <font size="4" color="royalblue">
+                        Reason:
+                    </font>
+
+                    <textarea name=" Reason" cols="45" rows="4"></textarea>
+                </td>
+            </tr>
+            <tr bgcolor="lightcyan">
+                <td>
+                    <font size="2" color="crimson">
+                        <input type="radio" name="Celebrex">Celebrex does not need to be stopped prior to surgery.All others NSAIDs should be stopped 5 days before
+                    </font>
+                </td>
+            </tr>
+            <tr bgcolor="lightcyan">
+                <td>
+                    <input type="button" onclick="Function1()" value="BMI防呆">
+                    <input type="button" onclick="Function2()" value="BMI計算">
+                    <input type="button" onclick="getPatient()" value="提交">
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+    <script>
+        function Function1() {
+            if (form1.Height.value == "") {
+                alert("未輸入Height");
+            }
+            else if (form1.Weight.value == "") {
+                alert("未輸入Weight");
+            }
+            else if (form1.Height.value < '0' || form1.Height.value > '9') {
+                alert("Height輸入需為數字");
+            }
+            else if (form1.Weight.value < '0' || form1.Weight.value > '9') {
+                alert("Weight輸入需為數字");
+            }
+        }
+        function Function2() {
+            var Height = 0;
+            var BMI = 0;
+            alert(BMI = (form1.Height.value) / ((form1.Weight.value / 100) * (form1.Weight.value / 100)));
+        }
+        function getPatient() {
+            var oform = document.forms['form1'];
+            var Patientname = oform.elements.Patientname.value;
+            var DateofBirth = oform.elements.DateofBirth.value;
+            var Height = oform.elements.Height.value;
+            var Weight = oform.elements.Weight.value;
+            var HP = oform.elements.HP.value;
+            var Anesthesia = oform.elements.Anesthesia.value;
+            var PATSDSRN = oform.elements.PATSDSRN.value;
+            var Labs = oform.elements.Labs.value;
+            var Culture = oform.elements.Culture.value;
+            var Xray = oform.elements.Xray.value;
+            var Celebrex = oform.elements.Celebrex.value;
+            var checks = document.getElementsByClassName('checks')
+
+            alert('Patientname是' + Patientname + '\n Date of Birth 是' + DateofBirth + '\n Height是' + Height + '\n Weight是' + Weight + '\n H&P 是' + HP
+                + '\n Anesthesia 是' + Anesthesia + '\n PAT/SDS RN 是' + PATSDSRN + '\n Labs 是' + Labs + '\n Culture 是' + Culture + '\n X-ray 是' + Xray + '\n Celebrex 是' + Celebrex);
+        }
+    </script>
+
+</body>
+
+</html >
